@@ -1,286 +1,699 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Команды бота</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-            border-bottom: 2px solid #007cba;
-            padding-bottom: 10px;
-        }
-        .command-category {
-            margin-bottom: 30px;
-        }
-        .category-title {
-            background-color: #007cba;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-        .command {
-            background-color: #f9f9f9;
-            border-left: 4px solid #007cba;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 0 5px 5px 0;
-        }
-        .command-name {
-            font-weight: bold;
-            color: #007cba;
-            font-size: 18px;
-        }
-        .command-description {
-            margin-top: 5px;
-            color: #666;
-        }
-        .command-usage {
-            font-style: italic;
-            background-color: #e9f5ff;
-            padding: 5px;
-            border-radius: 3px;
-            margin-top: 5px;
-            display: inline-block;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Команды Telegram-бота</h1>
-        
-        <div class="command-category">
-            <div class="category-title">🤖 Основные команды</div>
-            
-            <div class="command">
-                <div class="command-name">регистрация</div>
-                <div class="command-description">Регистрация нового пользователя в системе</div>
-                <div class="command-usage">регистрация</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!Элиана [запрос]</div>
-                <div class="command-description">Общение с ИИ Элианой</div>
-                <div class="command-usage">!Элиана Привет!</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!Малфас [запрос]</div>
-                <div class="command-description">Общение с ИИ Малфасом</div>
-                <div class="command-usage">!Малфас Как дела?</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!Эклипс [запрос]</div>
-                <div class="command-description">Общение с ИИ Эклипсом</div>
-                <div class="command-usage">!Эклипс Что ты умеешь?</div>
+    <main>
+        <div class="command-category" data-category>
+            <div class="category">
+                <div class="category-header">
+                    <div class="category-title">🤖 Основные команды</div>
+                    <div class="category-actions">
+                        <span class="chip" data-counter>0</span>
+                        <button class="btn ghost" data-toggle>Свернуть</button>
+                    </div>
+                </div>
+                <div class="commands">
+                    <div class="command" data-name="регистрация" data-desc="Регистрация нового пользователя в системе" data-usage="регистрация">
+                        <div>
+                            <div class="command-name">регистрация</div>
+                            <div class="command-description">Регистрация нового пользователя в системе</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: регистрация" title="Нажмите, чтобы скопировать">
+                            <span class="code">регистрация</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!Элиана [запрос]" data-desc="Общение с ИИ Элианой" data-usage="!Элиана Привет!">
+                        <div>
+                            <div class="command-name">!Элиана [запрос]</div>
+                            <div class="command-description">Общение с ИИ Элианой</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !Элиана Привет!" title="Нажмите, чтобы скопировать">
+                            <span class="code">!Элиана Привет!</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!Малфас [запрос]" data-desc="Общение с ИИ Малфасом" data-usage="!Малфас Как дела?">
+                        <div>
+                            <div class="command-name">!Малфас [запрос]</div>
+                            <div class="command-description">Общение с ИИ Малфасом</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !Малфас Как дела?" title="Нажмите, чтобы скопировать">
+                            <span class="code">!Малфас Как дела?</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!Эклипс [запрос]" data-desc="Общение с ИИ Эклипсом" data-usage="!Эклипс Что ты умеешь?">
+                        <div>
+                            <div class="command-name">!Эклипс [запрос]</div>
+                            <div class="command-description">Общение с ИИ Эклипсом</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !Эклипс Что ты умеешь?" title="Нажмите, чтобы скопировать">
+                            <span class="code">!Эклипс Что ты умеешь?</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="command-category">
-            <div class="category-title">🎮 Игровые команды</div>
-            
-            <div class="command">
-                <div class="command-name">!дать еды</div>
-                <div class="command-description">Покормить бота и получить скрепки</div>
-                <div class="command-usage">!дать еды вкусняшки</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!скрепки</div>
-                <div class="command-description">Проверить количество скрепок</div>
-                <div class="command-usage">!скрепки</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!коллекция</div>
-                <div class="command-description">Посмотреть свою коллекцию</div>
-                <div class="command-usage">!коллекция</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!казино</div>
-                <div class="command-description">Сыграть в казино (ставка 10 скрепок)</div>
-                <div class="command-usage">!казино</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!ограбить магазин</div>
-                <div class="command-description">Ограбить магазин (+50 скрепок)</div>
-                <div class="command-usage">!ограбить магазин</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!ограбить банк</div>
-                <div class="command-description">Ограбить банк (разные награды)</div>
-                <div class="command-usage">!ограбить банк</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!скрепка передать [количество]</div>
-                <div class="command-description">Передать скрепки другому пользователю</div>
-                <div class="command-usage">!скрепка передать 100 (в ответ на сообщение)</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!купить коллекционку</div>
-                <div class="command-description">Открыть магазин коллекционных предметов</div>
-                <div class="command-usage">!купить коллекционку</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!продать коллекционку</div>
-                <div class="command-description">Продать коллекционные предметы</div>
-                <div class="command-usage">!продать коллекционку</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!VIP</div>
-                <div class="command-description">Информация о VIP статусе</div>
-                <div class="command-usage">!VIP</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!купить VIP</div>
-                <div class="command-description">Приобрести VIP статус</div>
-                <div class="command-usage">!купить VIP</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!я [что-то]</div>
-                <div class="command-description">Узнать на сколько процентов ты что-то</div>
-                <div class="command-usage">!я крут</div>
+        <div class="command-category" data-category>
+            <div class="category">
+                <div class="category-header">
+                    <div class="category-title">🎮 Игровые команды</div>
+                    <div class="category-actions">
+                        <span class="chip" data-counter>0</span>
+                        <button class="btn ghost" data-toggle>Свернуть</button>
+                    </div>
+                </div>
+                <div class="commands">
+                    <div class="command" data-name="!дать еды" data-desc="Покормить бота и получить скрепки" data-usage="!дать еды вкусняшки">
+                        <div>
+                            <div class="command-name">!дать еды</div>
+                            <div class="command-description">Покормить бота и получить скрепки</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !дать еды вкусняшки" title="Нажмите, чтобы скопировать">
+                            <span class="code">!дать еды вкусняшки</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!скрепки" data-desc="Проверить количество скрепок" data-usage="!скрепки">
+                        <div>
+                            <div class="command-name">!скрепки</div>
+                            <div class="command-description">Проверить количество скрепок</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !скрепки" title="Нажмите, чтобы скопировать">
+                            <span class="code">!скрепки</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!коллекция" data-desc="Посмотреть свою коллекцию" data-usage="!коллекция">
+                        <div>
+                            <div class="command-name">!коллекция</div>
+                            <div class="command-description">Посмотреть свою коллекцию</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !коллекция" title="Нажмите, чтобы скопировать">
+                            <span class="code">!коллекция</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!казино" data-desc="Сыграть в казино (ставка 10 скрепок)" data-usage="!казино">
+                        <div>
+                            <div class="command-name">!казино</div>
+                            <div class="command-description">Сыграть в казино (ставка 10 скрепок)</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !казино" title="Нажмите, чтобы скопировать">
+                            <span class="code">!казино</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!ограбить магазин" data-desc="Ограбить магазин (+50 скрепок)" data-usage="!ограбить магазин">
+                        <div>
+                            <div class="command-name">!ограбить магазин</div>
+                            <div class="command-description">Ограбить магазин (+50 скрепок)</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !ограбить магазин" title="Нажмите, чтобы скопировать">
+                            <span class="code">!ограбить магазин</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!ограбить банк" data-desc="Ограбить банк (разные награды)" data-usage="!ограбить банк">
+                        <div>
+                            <div class="command-name">!ограбить банк</div>
+                            <div class="command-description">Ограбить банк (разные награды)</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !ограбить банк" title="Нажмите, чтобы скопировать">
+                            <span class="code">!ограбить банк</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!скрепка передать [количество]" data-desc="Передать скрепки другому пользователю" data-usage="!скрепка передать 100 (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!скрепка передать [количество]</div>
+                            <div class="command-description">Передать скрепки другому пользователю</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !скрепка передать 100" title="Нажмите, чтобы скопировать">
+                            <span class="code">!скрепка передать 100 (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!купить коллекционку" data-desc="Открыть магазин коллекционных предметов" data-usage="!купить коллекционку">
+                        <div>
+                            <div class="command-name">!купить коллекционку</div>
+                            <div class="command-description">Открыть магазин коллекционных предметов</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !купить коллекционку" title="Нажмите, чтобы скопировать">
+                            <span class="code">!купить коллекционку</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!продать коллекционку" data-desc="Продать коллекционные предметы" data-usage="!продать коллекционку">
+                        <div>
+                            <div class="command-name">!продать коллекционку</div>
+                            <div class="command-description">Продать коллекционные предметы</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !продать коллекционку" title="Нажмите, чтобы скопировать">
+                            <span class="code">!продать коллекционку</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!VIP" data-desc="Информация о VIP статусе" data-usage="!VIP">
+                        <div>
+                            <div class="command-name">!VIP</div>
+                            <div class="command-description">Информация о VIP статусе</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !VIP" title="Нажмите, чтобы скопировать">
+                            <span class="code">!VIP</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!купить VIP" data-desc="Приобрести VIP статус" data-usage="!купить VIP">
+                        <div>
+                            <div class="command-name">!купить VIP</div>
+                            <div class="command-description">Приобрести VIP статус</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !купить VIP" title="Нажмите, чтобы скопировать">
+                            <span class="code">!купить VIP</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!я [что-то]" data-desc="Узнать на сколько процентов ты что-то" data-usage="!я крут">
+                        <div>
+                            <div class="command-name">!я [что-то]</div>
+                            <div class="command-description">Узнать на сколько процентов ты что-то</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !я крут" title="Нажмите, чтобы скопировать">
+                            <span class="code">!я крут</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="command-category">
-            <div class="category-title">👥 Социальные команды</div>
-            
-            <div class="command">
-                <div class="command-name">!пожениться</div>
-                <div class="command-description">Сделать предложение руки и сердца</div>
-                <div class="command-usage">!пожениться (в ответ на сообщение)</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!развестись</div>
-                <div class="command-description">Развестись с партнером</div>
-                <div class="command-usage">!развестись (в ответ на сообщение)</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!+</div>
-                <div class="command-description">Повысить репутацию пользователя</div>
-                <div class="command-usage">!+ (в ответ на сообщение)</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!-</div>
-                <div class="command-description">Понизить репутацию пользователя</div>
-                <div class="command-usage">!- (в ответ на сообщение)</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!репутация</div>
-                <div class="command-description">Проверить свою репутацию</div>
-                <div class="command-usage">!репутация</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!репутация пользователя</div>
-                <div class="command-description">Проверить репутацию другого пользователя</div>
-                <div class="command-usage">!репутация пользователя (в ответ на сообщение)</div>
-            </div>
-        </div>
-
-        <div class="command-category">
-            <div class="category-title">🛠 Управление (для администраторов)</div>
-            
-            <div class="command">
-                <div class="command-name">!рп</div>
-                <div class="command-description">Включить/выключить ролевой режим</div>
-                <div class="command-usage">!рп</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!Мут [время в секундах]</div>
-                <div class="command-description">Замутить пользователя</div>
-                <div class="command-usage">!Мут 300 (в ответ на сообщение)</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!Размут</div>
-                <div class="command-description">Размутить пользователя</div>
-                <div class="command-usage">!Размут (в ответ на сообщение)</div>
-            </div>
-        </div>
-
-        <div class="command-category">
-            <div class="category-title">ℹ Информационные команды</div>
-            
-            <div class="command">
-                <div class="command-name">!описание</div>
-                <div class="command-description">Посмотреть свое описание</div>
-                <div class="command-usage">!описание</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!сменить описание [текст]</div>
-                <div class="command-description">Изменить свое описание</div>
-                <div class="command-usage">!сменить описание Я крутой!</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!добавить описание [текст]</div>
-                <div class="command-description">Добавить к своему описанию текст</div>
-                <div class="command-usage">!добавить описание Еще круче!</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!tag</div>
-                <div class="command-description">Посмотреть свой или чужой тег</div>
-                <div class="command-usage">!tag или !tag (в ответ на сообщение)</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!status</div>
-                <div class="command-description">Посмотреть статус бота</div>
-                <div class="command-usage">!status</div>
-            </div>
-            
-            <div class="command">
-                <div class="command-name">!v или !version</div>
-                <div class="command-description">Посмотреть версию бота</div>
-                <div class="command-usage">!v</div>
+        <div class="command-category" data-category>
+            <div class="category">
+                <div class="category-header">
+                    <div class="category-title">👥 Социальные команды</div>
+                    <div class="category-actions">
+                        <span class="chip" data-counter>0</span>
+                        <button class="btn ghost" data-toggle>Свернуть</button>
+                    </div>
+                </div>
+                <div class="commands">
+                    <div class="command" data-name="!пожениться" data-desc="Сделать предложение руки и сердца" data-usage="!пожениться (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!пожениться</div>
+                            <div class="command-description">Сделать предложение руки и сердца</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !пожениться" title="Нажмите, чтобы скопировать">
+                            <span class="code">!пожениться (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!развестись" data-desc="Развестись с партнером" data-usage="!развестись (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!развестись</div>
+                            <div class="command-description">Развестись с партнером</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !развестись" title="Нажмите, чтобы скопировать">
+                            <span class="code">!развестись (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!+" data-desc="Повысить репутацию пользователя" data-usage="!+ (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!+</div>
+                            <div class="command-description">Повысить репутацию пользователя</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !+" title="Нажмите, чтобы скопировать">
+                            <span class="code">!+ (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!-" data-desc="Понизить репутацию пользователя" data-usage="!- (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!-</div>
+                            <div class="command-description">Понизить репутацию пользователя</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !-" title="Нажмите, чтобы скопировать">
+                            <span class="code">!- (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!репутация" data-desc="Проверить свою репутацию" data-usage="!репутация">
+                        <div>
+                            <div class="command-name">!репутация</div>
+                            <div class="command-description">Проверить свою репутацию</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !репутация" title="Нажмите, чтобы скопировать">
+                            <span class="code">!репутация</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!репутация пользователя" data-desc="Проверить репутацию другого пользователя" data-usage="!репутация пользователя (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!репутация пользователя</div>
+                            <div class="command-description">Проверить репутацию другого пользователя</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !репутация пользователя" title="Нажмите, чтобы скопировать">
+                            <span class="code">!репутация пользователя (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="command-category">
-            <div class="category-title">📥 Медиа команды</div>
-            
-            <div class="command">
-                <div class="command-name">!ютуб [ссылка]</div>
-                <div class="command-description">Скачать видео с YouTube</div>
-                <div class="command-usage">!ютуб https://youtube.com/watch?v=...</div>
+        <div class="command-category" data-category>
+            <div class="category">
+                <div class="category-header">
+                    <div class="category-title">🛠 Управление (для администраторов)</div>
+                    <div class="category-actions">
+                        <span class="chip" data-counter>0</span>
+                        <button class="btn ghost" data-toggle>Свернуть</button>
+                    </div>
+                </div>
+                <div class="commands">
+                    <div class="command" data-name="!рп" data-desc="Включить/выключить ролевой режим" data-usage="!рп">
+                        <div>
+                            <div class="command-name">!рп</div>
+                            <div class="command-description">Включить/выключить ролевой режим</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !рп" title="Нажмите, чтобы скопировать">
+                            <span class="code">!рп</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!Мут [время в секундах]" data-desc="Замутить пользователя" data-usage="!Мут 300 (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!Мут [время в секундах]</div>
+                            <div class="command-description">Замутить пользователя</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !Мут 300" title="Нажмите, чтобы скопировать">
+                            <span class="code">!Мут 300 (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!Размут" data-desc="Размутить пользователя" data-usage="!Размут (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!Размут</div>
+                            <div class="command-description">Размутить пользователя</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !Размут" title="Нажмите, чтобы скопировать">
+                            <span class="code">!Размут (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+
+        <div class="command-category" data-category>
+            <div class="category">
+                <div class="category-header">
+                    <div class="category-title">ℹ Информационные команды</div>
+                    <div class="category-actions">
+                        <span class="chip" data-counter>0</span>
+                        <button class="btn ghost" data-toggle>Свернуть</button>
+                    </div>
+                </div>
+                <div class="commands">
+                    <div class="command" data-name="!описание" data-desc="Посмотреть свое описание" data-usage="!описание">
+                        <div>
+                            <div class="command-name">!описание</div>
+                            <div class="command-description">Посмотреть свое описание</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !описание" title="Нажмите, чтобы скопировать">
+                            <span class="code">!описание</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!сменить описание [текст]" data-desc="Изменить свое описание" data-usage="!сменить описание Я крутой!">
+                        <div>
+                            <div class="command-name">!сменить описание [текст]</div>
+                            <div class="command-description">Изменить свое описание</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !сменить описание Я крутой!" title="Нажмите, чтобы скопировать">
+                            <span class="code">!сменить описание Я крутой!</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!добавить описание [текст]" data-desc="Добавить к своему описанию текст" data-usage="!добавить описание Еще круче!">
+                        <div>
+                            <div class="command-name">!добавить описание [текст]</div>
+                            <div class="command-description">Добавить к своему описанию текст</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !добавить описание Еще круче!" title="Нажмите, чтобы скопировать">
+                            <span class="code">!добавить описание Еще круче!</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!tag" data-desc="Посмотреть свой или чужой тег" data-usage="!tag или !tag (в ответ на сообщение)">
+                        <div>
+                            <div class="command-name">!tag</div>
+                            <div class="command-description">Посмотреть свой или чужой тег</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !tag" title="Нажмите, чтобы скопировать">
+                            <span class="code">!tag или !tag (в ответ на сообщение)</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!status" data-desc="Посмотреть статус бота" data-usage="!status">
+                        <div>
+                            <div class="command-name">!status</div>
+                            <div class="command-description">Посмотреть статус бота</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !status" title="Нажмите, чтобы скопировать">
+                            <span class="code">!status</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="command" data-name="!v или !version" data-desc="Посмотреть версию бота" data-usage="!v">
+                        <div>
+                            <div class="command-name">!v или !version</div>
+                            <div class="command-description">Посмотреть версию бота</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !v" title="Нажмите, чтобы скопировать">
+                            <span class="code">!v</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="command-category" data-category>
+            <div class="category">
+                <div class="category-header">
+                    <div class="category-title">📥 Медиа команды</div>
+                    <div class="category-actions">
+                        <span class="chip" data-counter>0</span>
+                        <button class="btn ghost" data-toggle>Свернуть</button>
+                    </div>
+                </div>
+                <div class="commands">
+                    <div class="command" data-name="!ютуб [ссылка]" data-desc="Скачать видео с YouTube" data-usage="!ютуб https://youtube.com/watch?v=...">
+                        <div>
+                            <div class="command-name">!ютуб [ссылка]</div>
+                            <div class="command-description">Скачать видео с YouTube</div>
+                        </div>
+                        <div class="command-usage" role="button" tabindex="0" aria-label="Скопировать usage: !ютуб https://youtube.com/watch?v=..." title="Нажмите, чтобы скопировать">
+                            <span class="code">!ютуб https://youtube.com/watch?v=...</span>
+                            <svg class="copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty" id="empty">Нет результатов по вашему запросу</div>
+    </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Скопировано!</div>
+
+<script>
+    (function() {
+        const root = document.documentElement;
+        const app = document.getElementById('app');
+        const searchInput = document.getElementById('search');
+        const themeToggle = document.getElementById('themeToggle');
+        const iconSun = document.getElementById('iconSun');
+        const iconMoon = document.getElementById('iconMoon');
+        const collapseAllBtn = document.getElementById('collapseAll');
+        const expandAllBtn = document.getElementById('expandAll');
+        const toast = document.getElementById('toast');
+        const empty = document.getElementById('empty');
+
+        // Theme
+        const savedTheme = localStorage.getItem('bot-commands-theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            root.setAttribute('data-theme', 'dark');
+            iconSun.style.display = 'none';
+            iconMoon.style.display = '';
+        } else {
+            root.setAttribute('data-theme', 'light');
+            iconSun.style.display = '';
+            iconMoon.style.display = 'none';
+        }
+        themeToggle.addEventListener('click', () => {
+            const isDark = root.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('bot-commands-theme', 'light');
+                iconSun.style.display = '';
+                iconMoon.style.display = 'none';
+            } else {
+                root.setAttribute('data-theme', 'dark');
+                localStorage.setItem('bot-commands-theme', 'dark');
+                iconSun.style.display = 'none';
+                iconMoon.style.display = '';
+            }
+        });
+
+        // Search
+        const categoryEls = Array.from(document.querySelectorAll('[data-category]'));
+        const commandEls = Array.from(document.querySelectorAll('.command'));
+        function updateCounters() {
+            categoryEls.forEach(cat => {
+                const counter = cat.querySelector('[data-counter]');
+                const visible = cat.querySelectorAll('.command:not([hidden])').length;
+                counter.textContent = visible;
+            });
+        }
+        function filterCommands(q) {
+            const query = q.trim().toLowerCase();
+            if (!query) {
+                commandEls.forEach(el => el.hidden = false);
+                categoryEls.forEach(cat => cat.hidden = false);
+                empty.classList.remove('show');
+                updateCounters();
+                return;
+            }
+            let anyVisible = false;
+            categoryEls.forEach(cat => {
+                let catVisible = false;
+                const items = cat.querySelectorAll('.command');
+                items.forEach(el => {
+                    const hay = (
+                        (el.getAttribute('data-name') || '') + ' ' +
+                        (el.getAttribute('data-desc') || '') + ' ' +
+                        (el.getAttribute('data-usage') || '')
+                    ).toLowerCase();
+                    const show = hay.includes(query);
+                    el.hidden = !show;
+                    if (show) {
+                        catVisible = true;
+                        anyVisible = true;
+                    }
+                });
+                cat.hidden = !catVisible;
+            });
+            if (!anyVisible) {
+                empty.classList.add('show');
+            } else {
+                empty.classList.remove('show');
+            }
+            updateCounters();
+        }
+        searchInput.addEventListener('input', (e) => filterCommands(e.target.value));
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+                searchInput.select();
+            } else if ((e.key === 'd' || e.key === 'D') && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                themeToggle.click();
+            }
+        });
+
+        // Collapsible categories
+        categoryEls.forEach(cat => {
+            const btn = cat.querySelector('[data-toggle]');
+            const list = cat.querySelector('.commands');
+            btn.addEventListener('click', () => {
+                const hidden = list.style.display === 'none';
+                list.style.display = hidden ? '' : 'none';
+                btn.textContent = hidden ? 'Свернуть' : 'Развернуть';
+            });
+        });
+        collapseAllBtn.addEventListener('click', () => {
+            categoryEls.forEach(cat => {
+                cat.querySelector('.commands').style.display = 'none';
+                cat.querySelector('[data-toggle]').textContent = 'Развернуть';
+            });
+        });
+        expandAllBtn.addEventListener('click', () => {
+            categoryEls.forEach(cat => {
+                cat.querySelector('.commands').style.display = '';
+                cat.querySelector('[data-toggle]').textContent = 'Свернуть';
+            });
+        });
+
+        // Copy usage
+        function showToast(text = 'Скопировано!') {
+            toast.textContent = text;
+            toast.classList.add('show');
+            clearTimeout(showToast._t);
+            showToast._t = setTimeout(() => toast.classList.remove('show'), 1400);
+        }
+        function copyText(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => showToast()).catch(() => fallback());
+            } else {
+                fallback();
+            }
+            function fallback() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.left = '-9999px';
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                try { document.execCommand('copy'); showToast(); } catch {}
+                document.body.removeChild(ta);
+            }
+        }
+        document.querySelectorAll('.command-usage').forEach(el => {
+            const code = el.querySelector('.code')?.textContent?.trim() || el.textContent.trim();
+            const handler = (e) => {
+                e.preventDefault();
+                copyText(code);
+                el.classList.add('copied');
+                clearTimeout(el._copiedTimer);
+                el._copiedTimer = setTimeout(() => el.classList.remove('copied'), 1000);
+            };
+            el.addEventListener('click', handler);
+            el.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') handler(e);
+            });
+        });
+
+        // Initial counters
+        updateCounters();
+    })();
+</script>
