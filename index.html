@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команды бота</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 2px solid #007cba;
+            padding-bottom: 10px;
+        }
+        .command-category {
+            margin-bottom: 30px;
+        }
+        .category-title {
+            background-color: #007cba;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .command {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007cba;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        .command-name {
+            font-weight: bold;
+            color: #007cba;
+            font-size: 18px;
+        }
+        .command-description {
+            margin-top: 5px;
+            color: #666;
+        }
+        .command-usage {
+            font-style: italic;
+            background-color: #e9f5ff;
+            padding: 5px;
+            border-radius: 3px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Команды Telegram-бота</h1>
+        
+        <div class="command-category">
+            <div class="category-title">🤖 Основные команды</div>
+            
+            <div class="command">
+                <div class="command-name">регистрация</div>
+                <div class="command-description">Регистрация нового пользователя в системе</div>
+                <div class="command-usage">регистрация</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!Элиана [запрос]</div>
+                <div class="command-description">Общение с ИИ Элианой</div>
+                <div class="command-usage">!Элиана Привет!</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!Малфас [запрос]</div>
+                <div class="command-description">Общение с ИИ Малфасом</div>
+                <div class="command-usage">!Малфас Как дела?</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!Эклипс [запрос]</div>
+                <div class="command-description">Общение с ИИ Эклипсом</div>
+                <div class="command-usage">!Эклипс Что ты умеешь?</div>
+            </div>
+        </div>
+
+        <div class="command-category">
+            <div class="category-title">🎮 Игровые команды</div>
+            
+            <div class="command">
+                <div class="command-name">!дать еды</div>
+                <div class="command-description">Покормить бота и получить скрепки</div>
+                <div class="command-usage">!дать еды вкусняшки</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!скрепки</div>
+                <div class="command-description">Проверить количество скрепок</div>
+                <div class="command-usage">!скрепки</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!коллекция</div>
+                <div class="command-description">Посмотреть свою коллекцию</div>
+                <div class="command-usage">!коллекция</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!казино</div>
+                <div class="command-description">Сыграть в казино (ставка 10 скрепок)</div>
+                <div class="command-usage">!казино</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!ограбить магазин</div>
+                <div class="command-description">Ограбить магазин (+50 скрепок)</div>
+                <div class="command-usage">!ограбить магазин</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!ограбить банк</div>
+                <div class="command-description">Ограбить банк (разные награды)</div>
+                <div class="command-usage">!ограбить банк</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!скрепка передать [количество]</div>
+                <div class="command-description">Передать скрепки другому пользователю</div>
+                <div class="command-usage">!скрепка передать 100 (в ответ на сообщение)</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!купить коллекционку</div>
+                <div class="command-description">Открыть магазин коллекционных предметов</div>
+                <div class="command-usage">!купить коллекционку</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!продать коллекционку</div>
+                <div class="command-description">Продать коллекционные предметы</div>
+                <div class="command-usage">!продать коллекционку</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!VIP</div>
+                <div class="command-description">Информация о VIP статусе</div>
+                <div class="command-usage">!VIP</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!купить VIP</div>
+                <div class="command-description">Приобрести VIP статус</div>
+                <div class="command-usage">!купить VIP</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!я [что-то]</div>
+                <div class="command-description">Узнать на сколько процентов ты что-то</div>
+                <div class="command-usage">!я крут</div>
+            </div>
+        </div>
+
+        <div class="command-category">
+            <div class="category-title">👥 Социальные команды</div>
+            
+            <div class="command">
+                <div class="command-name">!пожениться</div>
+                <div class="command-description">Сделать предложение руки и сердца</div>
+                <div class="command-usage">!пожениться (в ответ на сообщение)</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!развестись</div>
+                <div class="command-description">Развестись с партнером</div>
+                <div class="command-usage">!развестись (в ответ на сообщение)</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!+</div>
+                <div class="command-description">Повысить репутацию пользователя</div>
+                <div class="command-usage">!+ (в ответ на сообщение)</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!-</div>
+                <div class="command-description">Понизить репутацию пользователя</div>
+                <div class="command-usage">!- (в ответ на сообщение)</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!репутация</div>
+                <div class="command-description">Проверить свою репутацию</div>
+                <div class="command-usage">!репутация</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!репутация пользователя</div>
+                <div class="command-description">Проверить репутацию другого пользователя</div>
+                <div class="command-usage">!репутация пользователя (в ответ на сообщение)</div>
+            </div>
+        </div>
+
+        <div class="command-category">
+            <div class="category-title">🛠 Управление (для администраторов)</div>
+            
+            <div class="command">
+                <div class="command-name">!рп</div>
+                <div class="command-description">Включить/выключить ролевой режим</div>
+                <div class="command-usage">!рп</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!Мут [время в секундах]</div>
+                <div class="command-description">Замутить пользователя</div>
+                <div class="command-usage">!Мут 300 (в ответ на сообщение)</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!Размут</div>
+                <div class="command-description">Размутить пользователя</div>
+                <div class="command-usage">!Размут (в ответ на сообщение)</div>
+            </div>
+        </div>
+
+        <div class="command-category">
+            <div class="category-title">ℹ Информационные команды</div>
+            
+            <div class="command">
+                <div class="command-name">!описание</div>
+                <div class="command-description">Посмотреть свое описание</div>
+                <div class="command-usage">!описание</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!сменить описание [текст]</div>
+                <div class="command-description">Изменить свое описание</div>
+                <div class="command-usage">!сменить описание Я крутой!</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!добавить описание [текст]</div>
+                <div class="command-description">Добавить к своему описанию текст</div>
+                <div class="command-usage">!добавить описание Еще круче!</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!tag</div>
+                <div class="command-description">Посмотреть свой или чужой тег</div>
+                <div class="command-usage">!tag или !tag (в ответ на сообщение)</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!status</div>
+                <div class="command-description">Посмотреть статус бота</div>
+                <div class="command-usage">!status</div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!v или !version</div>
+                <div class="command-description">Посмотреть версию бота</div>
+                <div class="command-usage">!v</div>
+            </div>
+        </div>
+
+        <div class="command-category">
+            <div class="category-title">📥 Медиа команды</div>
+            
+            <div class="command">
+                <div class="command-name">!ютуб [ссылка]</div>
+                <div class="command-description">Скачать видео с YouTube</div>
+                <div class="command-usage">!ютуб https://youtube.com/watch?v=...</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
